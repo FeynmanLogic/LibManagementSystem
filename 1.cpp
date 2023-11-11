@@ -56,8 +56,7 @@ int main() {
             cin.ignore(); // Ignore the newline character left in the buffer
             cin.getline(lib1.books[0].title, sizeof(lib1.books[0].title));
 
-            cout << "Book title just entered is: " << endl;
-            cout << lib1.books[0].title << endl;
+   
             break;
       }
    }
