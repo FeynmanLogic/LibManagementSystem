@@ -1,2 +1,3 @@
-# PacketSniffer
-This is a packet sniffer built in C++. Used to understand routing protocols, source and destination addresses of packets.
+# Library Management System
+This is a library management system built in C++. It utilizes Object Oriented Programming, and utilizes multiple aspects such as Inheritance, Encapsulation and Data Abstraction.
+
