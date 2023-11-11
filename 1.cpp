@@ -1,64 +1,66 @@
-
 #include <iostream>
-#include <string.h>
-#include <stdlib.h>
+#include <cstring> // Instead of <string.h>
 using namespace std;
 
-class Book
-{
+class Book {
 public:
    char title[100];
    char author[50];
    int isbn;
-   bool available=0; //1 is yes 0 if no
-   bool availability(bool available)
-   {
-      if(available)
-      {cout <<"Book is available"<<endl;
-      return true;
-       }
-       return false;
-
+   bool available = false; // 1 is yes, 0 if no
+   bool availability() {
+      if (available) {
+         cout << "Book is available" << endl;
+         return true;
+      }
+      return false;
    }
 };
-class Library
-{ public: 
-    Book books[20];
-    User users[20];
-};
 
-
-class User
-{
+class User {
 public:
    int user_id;
    char username[20];
    int books_issued[10];
-   
 };
 
-int main()
-{
+class Library {
+public:
+   Book books[1000];
+   User users[20];
+};
+
+int main() {
+   Library lib1;
    int operation;
-   std::cout<< "this is operation menu, enter -1 to exit"<<std::endl;
-   while(1){
-   std::cout<<"Enter 1 for entering book details"<<std::endl;
-   std::cout<<"Enter 2 for updating user details"<<std::endl;
-   std::cout<<"Enter 3 for updating library  details"<<std::endl;
-   std::cin >> operation;
-    std::cout << std::endl;
-   if(operation == -1)
-   {
-      break;
-   }
-   switch(operation)
-   {
-      case 1:
-         
-
-   }
 
 
+   while (1) {
+      cout << "this is the operation menu, enter -1 to exit" << endl;
+      cout << "Enter 1 for entering book details" << endl;
+      cout << "Enter 2 for updating user details" << endl;
+      cout << "Enter 3 for updating library details" << endl;
+      cin >> operation;
+
+      if (operation == -1) {
+         cout << "exiting" << endl;
+         break;
+      }
+
+      switch (operation) {
+         case 1:
+            cout << "Enter book id" << endl;
+            cin >> lib1.books[0].isbn;
+
+            cout << "Enter book title" << endl;
+            cin.ignore(); // Ignore the newline character left in the buffer
+            cin.getline(lib1.books[0].title, sizeof(lib1.books[0].title));
+
+            cout << "Book title just entered is: " << endl;
+            cout << lib1.books[0].title << endl;
+            break;
+      }
    }
+
    return 0;
 }
