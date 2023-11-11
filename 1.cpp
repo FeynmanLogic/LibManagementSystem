@@ -22,6 +22,13 @@ public:
    int user_id;
    char username[20];
    int books_issued[10];
+   int count=0;
+   void Issue(int isbn)
+   {
+      books_issued[count]=isbn;
+      
+   }
+
 };
 
 class Library {
@@ -40,6 +47,8 @@ int main() {
       cout << "Enter 1 for entering book details" << endl;
       cout << "Enter 2 for updating user details" << endl;
       cout << "Enter 3 for updating library details" << endl;
+      cout << "enter 4 for checking user details" <<endl;
+      cout << "enter 5 for checking book details" <<endl;
       cin >> operation;
 
       if (operation == -1) {
